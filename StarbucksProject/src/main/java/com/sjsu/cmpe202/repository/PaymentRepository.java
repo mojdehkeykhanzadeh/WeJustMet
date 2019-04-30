@@ -1,5 +1,13 @@
 package com.sjsu.cmpe202.repository;
 
-public class PaymentRepository {
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.repository.query.Param;
+
+import com.sjsu.cmpe202.model.Payment;
+
+public interface PaymentRepository extends MongoRepository <Payment , String> {
+	List<Payment> findPaymentByCardID(@Param("CardID") String cardID);
 
 }
