@@ -7,36 +7,43 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @Document 
-@JsonDeserialize(as = Payment.class)
 
 public class Payment {
 	@Id
-	private String id;
-	private String amount;
-	private String cardID;
+	private Integer id;
+	private double amount;
+	private Integer cardID;
+	private Integer userId;
 	
-	@JsonCreator
-	public Payment( @JsonProperty(value = "amount", required = true)String amount ,@JsonProperty(value = "cardID", required = true)String cardID) {
+	public Payment( int id ,double amount ,Integer cardID,Integer userId) {
+		this.id = id;
 		this.cardID = cardID ;
 	    this.amount = amount ;
+	    this.userId = userId;
 	}
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getAmount() {
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(String amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	public String getCardID() {
+	public Integer getCardID() {
 		return cardID;
 	}
-	public void setCardId(String cardID) {
+	public void setCardId(Integer cardID) {
 		this.cardID = cardID;
+	}
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 
