@@ -15,5 +15,7 @@ N/A
 
 ### XP Core Values that kept throughout the project :
 
-Communication- We communicated well through WhatsApp team channel for standup . We noted the minutes of the points which were discussed about best solution  and also if any blocker. We connected through zoom conference for discussion about project work .  
+Communication- We communicated well through WhatsApp team channel for standup . We noted the minutes of the points which were discussed about best solution  and also if any blocker. We connected through zoom conference for discussion about project work 
+
+
 ---
