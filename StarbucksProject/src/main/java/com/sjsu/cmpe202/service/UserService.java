@@ -1,73 +1,50 @@
-package com.sjsu.cmpe202.service;
+package com.example.mongo.api.service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.sjsu.cmpe202.models.Role;
-import com.sjsu.cmpe202.models.User;
-import com.sjsu.cmpe202.repositories.RoleRepository;
-import com.sjsu.cmpe202.repositories.UserRepository;
+import com.example.mongo.api.model.User;
+import com.example.mongo.api.repository.UserRepository;
 
 @Service
-public class UserService implements UserDetailsService {
-
-	@Autowired
+public class UserService {
+	
+	@Autowired  
 	private UserRepository userRepository;
 	
-	@Autowired
-	private RoleRepository roleRepository;
 	
-	@Autowired
-	private PasswordEncoder bCryptPasswordEncoder;
-	
-	public User findUserByEmail(String email) {
-	    return userRepository.findByEmail(email);
+	//Create operation
+	public User create (String email, String firstName, String lastName) {
+		return userRepository.save(new User(email, firstName, lastName));
+	}
+	//Retrieve operation
+	public List<User> getAll(){
+		return userRepository.findAll();
 	}
 	
-	public void saveUser(User user) {
-	    user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-	    user.setEnabled(true);
-	    Role userRole = roleRepository.findByRole("ADMIN");
-	    user.setRoles(new HashSet<>(Arrays.asList(userRole)));
-	    userRepository.save(user);
+	public User getByEmail(String email) {
+		return userRepository.findByEmail(email);
 	}
 	
-	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+	//Update operation
+	public User update(String email, String firstName, String lastName) {
+		User u  = userRepository.findByEmail(email);
+		u.setFirstName(firstName);
+		u.setLastName(lastName);
+		return userRepository.save(u);
+	}
+	
+	//Delete operation
+	public void deleteAll() {
+		userRepository.deleteAll();
+	}
+	public void delete(String email) {
+		User u = userRepository.findByEmail(email);
+		userRepository.delete(u);
+	}
+		
+		
 
-	    User user = userRepository.findByEmail(email);
-	    if(user != null) {
-	        List<GrantedAuthority> authorities = getUserAuthority(user.getRoles());
-	        return buildUserForAuthentication(user, authorities);
-	    } else {
-	        throw new UsernameNotFoundException("username not found");
-	    }
-	}
-	
-	private List<GrantedAuthority> getUserAuthority(Set<Role> userRoles) {
-	    Set<GrantedAuthority> roles = new HashSet<>();
-	    userRoles.forEach((role) -> {
-	        roles.add(new SimpleGrantedAuthority(role.getRole()));
-	    });
-
-	    List<GrantedAuthority> grantedAuthorities = new ArrayList<>(roles);
-	    return grantedAuthorities;
-	}
-	
-	private UserDetails buildUserForAuthentication(User user, List<GrantedAuthority> authorities) {
-	    return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
-	}
 }
-
