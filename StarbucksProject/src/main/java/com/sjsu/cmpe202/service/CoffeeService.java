@@ -7,8 +7,8 @@ import java.util.Iterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.Coffee;
-import com.example.demo.repository.CoffeeRepository;
+import com.sjsu.cmpe202.model.Coffee;
+import com.sjsu.cmpe202.repository.CoffeeRepository;
 
 @Service
 public class CoffeeService {
@@ -61,18 +61,12 @@ public class CoffeeService {
 		return cost;
 	}
 	
-
 	
 	
-	
-	
-	public double getOrderCost() 
+	public double getOrderCost(ArrayList<String> array) 
 	{
 		
-		ArrayList<String> order = new ArrayList<String>();
-		order.add("Coffee1");
-		order.add("Coffee3");
-		order.add("Coffee9");
+		ArrayList<String> order = array;
 		
 		double orderCost = 0.00;
 		
