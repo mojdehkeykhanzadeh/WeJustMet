@@ -1,60 +1,48 @@
-package com.sjsu.cmpe202.model;
-
-import java.util.Set;
+package com.example.mongo.api.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.IndexDirection;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "users")
+@Document
 public class User {
-
 	@Id
-	private String id;
-	@Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
-	private String email;
-	private String password;
-	private String fullname;
-	private boolean enabled;
-	/*@DBRef
-	private Set<Role> roles;
-	public String getId() {
-		return id;
-	} might be not needed */
-	public void setId(String id) {
-		this.id = id;
+	String Id; 
+	String firstName;
+	String lastName;
+	String email;
+	
+	public User(String email, String firstName, String lastName) {
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		 
 	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public String getEmail() {
 		return email;
 	}
+ 
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPassword() {
-		return password;
+	public String toString() {
+		 return "User Email: " + email + "First Name: " + firstName + "Last Name: " +lastName;
 	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getFullname() {
-		return fullname;
-	}
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
-	}
-	public boolean isEnabled() {
-		return enabled;
-	}
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
-	/*public Set<Role> getRoles() {
-		return roles;
-	}
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}might be not needed */
 	
 }
