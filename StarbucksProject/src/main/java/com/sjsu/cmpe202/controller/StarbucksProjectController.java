@@ -1,6 +1,8 @@
 package com.sjsu.cmpe202.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,11 +21,13 @@ public class StarbucksProjectController {
 	
 	
 	@RequestMapping(value = "/makePayment", method = RequestMethod.POST)
-    public String postPayment(@RequestParam int id, @RequestParam Integer cardID, @RequestParam double amt,@RequestParam Integer userId) throws JsonProcessingException {
+    public ResponseEntity<String> postPayment(@RequestParam int id, @RequestParam Integer cardID, @RequestParam double amt,@RequestParam Integer userId) throws JsonProcessingException {
         
         Payment payment = paymentservice.makePayment(id,cardID, amt,userId);
-      
-        return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(payment);
+        if(payment!=null) {
+        return new ResponseEntity<>(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(payment),HttpStatus.OK);
+        }else 
+		return new ResponseEntity<>("Sorry amount can't be more than blance!!!",HttpStatus.INTERNAL_SERVER_ERROR);
 		
 	}
 	@RequestMapping(value = "/deductMoney", method = RequestMethod.POST)
