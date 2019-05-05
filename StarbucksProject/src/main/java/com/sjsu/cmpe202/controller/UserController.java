@@ -1,4 +1,4 @@
-package com.example.mongo.api.controller;
+package com.sjsu.cmpe202.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.mongo.api.model.User;
-import com.example.mongo.api.service.UserService;
+import com.sjsu.cmpe202.model.User;
+import com.sjsu.cmpe202.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

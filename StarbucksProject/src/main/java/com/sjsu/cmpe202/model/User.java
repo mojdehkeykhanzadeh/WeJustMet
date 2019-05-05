@@ -1,4 +1,4 @@
-package com.example.mongo.api.model;
+package com.sjsu.cmpe202.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

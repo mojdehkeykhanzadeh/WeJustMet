@@ -1,12 +1,12 @@
-package com.example.mongo.api.service;
+package com.sjsu.cmpe202.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.mongo.api.model.User;
-import com.example.mongo.api.repository.UserRepository;
+import com.sjsu.cmpe202.model.User;
+import com.sjsu.cmpe202.repository.UserRepository;
 
 @Service
 public class UserService {
