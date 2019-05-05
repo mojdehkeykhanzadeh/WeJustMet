@@ -3,46 +3,50 @@ package com.example.mongo.api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.mongo.api.model.User;
 import com.example.mongo.api.service.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 public class UserController {
 	@Autowired
 	private UserService userService;
+	//private ObjectMapper mapper = new ObjectMapper();
 	
-	@RequestMapping("/create")
-	public String create(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName) {
-		User u = userService.create(email, firstName, lastName);
-		return u.toString();
+	@PostMapping("/createUser")
+	public String create(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName) throws JsonProcessingException {
+		User user = userService.create(email, firstName, lastName);
+		return user.toString();
 	}
 	
-	@RequestMapping("/get")
+	@GetMapping("/getUser")
 	public User getUser(@RequestParam String email) {
 		return userService.getByEmail(email);
 	}
-	@RequestMapping("/getAll")
+	@GetMapping("/getAllUser")
 	public List<User> getAll(){
 		return userService.getAll();
 	}
-	@RequestMapping("/update")
+	@PostMapping("/updateUser")
 	public String update(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName) {
-		User u = userService.update(firstName, firstName, lastName);
+		User u = userService.update(email, firstName, lastName);
 		return u.toString();
 	}
-	@RequestMapping("/delete")
+	@RequestMapping("/deleteUser")
 	public String delete(@RequestParam String email) {
 		userService.delete(email);
 		return "Deleted "+email;
 	}
-	@RequestMapping ("/deleteAll")
+	@RequestMapping ("/deleteAllUser")
 	public String deleteAll() {
 		userService.deleteAll();
 		return "Deleted all records";
 	}
-
 }
