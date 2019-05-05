@@ -3,6 +3,7 @@ package com.sjsu.cmpe202.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +22,8 @@ public class UserController {
 	//private ObjectMapper mapper = new ObjectMapper();
 	
 	@PostMapping("/createUser")
-	public String create(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName) throws JsonProcessingException {
-		User user = userService.create(email, firstName, lastName);
+	public String create(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String userNumber) throws JsonProcessingException {
+		User user = userService.create(email, firstName, lastName, userNumber);
 		return user.toString();
 	}
 	
@@ -35,16 +36,16 @@ public class UserController {
 		return userService.getAll();
 	}
 	@PostMapping("/updateUser")
-	public String update(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName) {
-		User u = userService.update(email, firstName, lastName);
+	public String update(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String userNumber) {
+		User u = userService.update(email, firstName, lastName, userNumber);
 		return u.toString();
 	}
-	@RequestMapping("/deleteUser")
+	@DeleteMapping("/deleteUser")
 	public String delete(@RequestParam String email) {
 		userService.delete(email);
 		return "Deleted "+email;
 	}
-	@RequestMapping ("/deleteAllUser")
+	@DeleteMapping ("/deleteAllUser")
 	public String deleteAll() {
 		userService.deleteAll();
 		return "Deleted all records";

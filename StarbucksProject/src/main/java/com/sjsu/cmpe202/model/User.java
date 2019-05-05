@@ -7,17 +7,27 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
 	@Id
 	String Id; 
+	String email;
 	String firstName;
 	String lastName;
-	String email;
+	String userNumber;
 	
-	public User(String email, String firstName, String lastName) {
+	public User(String email, String firstName, String lastName, String userNumber) {
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.userNumber = userNumber;
 		 
 	}
 
+	public String getEmail() {
+		return email;
+	}
+ 
+	public void setEmail(String email) {
+		this.email = email;
+	}	
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -34,15 +44,17 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUserNumber() {
+		return userNumber;
 	}
- 
-	public void setEmail(String email) {
-		this.email = email;
+	
+	public void setUserNumber(String userNumber) {
+		this.userNumber = userNumber;
 	}
+	
+
 	public String toString() {
-		 return "User Email: " + email + "First Name: " + firstName + "Last Name: " +lastName;
+		 return "User Email: " + email + " First Name: " + firstName + " Last Name: " +lastName +" User Number: "+ userNumber;
 	}
 	
 }
