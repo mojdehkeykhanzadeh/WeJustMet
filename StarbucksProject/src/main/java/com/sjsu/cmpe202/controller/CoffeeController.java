@@ -1,5 +1,6 @@
 package com.sjsu.cmpe202.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.example.demo.model.Coffee;
-import com.example.demo.service.CoffeeService;
+import com.sjsu.cmpe202.model.Coffee;
+import com.sjsu.cmpe202.service.CoffeeService;
 
 @RestController
 public class CoffeeController {
@@ -55,9 +56,9 @@ public class CoffeeController {
 	}
 	
 	@RequestMapping ("/getOrder")
-	public double getOrder()
+	public double getOrder(ArrayList<String> array)
 	{
-		double orderCost = coffeeService.getOrderCost();
+		double orderCost = coffeeService.getOrderCost(array);
 		return orderCost;
 	}
 
