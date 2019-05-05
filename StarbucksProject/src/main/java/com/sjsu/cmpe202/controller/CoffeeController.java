@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,48 +20,59 @@ public class CoffeeController {
 	
 	@Autowired
 	private CoffeeService coffeeService;
+
 	
-	@RequestMapping("/create")
+	@PostMapping("/create")
 	public String create(@RequestParam String name, @RequestParam double price)
 	{
 		Coffee p = coffeeService.create(name, price);
 		return p.toString();
 	}
 	
-	@RequestMapping("/get")
+	@GetMapping("/get")
 	public Coffee getCoffee(@RequestParam String name)
 	{
 		return coffeeService.getByName(name);
 	}
 	
-	@RequestMapping("/getAll")
+	@GetMapping("/getAll")
 	public List<Coffee> getAll(){
 		return coffeeService.getAll();
 	}
 	
-	@RequestMapping("/update")
+	@PostMapping("/update")
 	public String update(@RequestParam String name, @RequestParam double price) {
 		Coffee p = coffeeService.update(name, price);
 		return p.toString();
 	}
 	
-	@RequestMapping("/delete")
+	@PostMapping("/delete")
 	public String delete(@RequestParam String name) {
 		coffeeService.delete(name);
 		return "Deleted " + name;
 	}
 	
-	@RequestMapping ("/deleteAll")
+	@DeleteMapping ("/deleteAll")
 	public String deleteAll() {
 		coffeeService.deleteAll();
 		return "Deleted all records";
 	}
 	
-	@RequestMapping ("/getOrder")
+	@PostMapping ("/addToOrder")
+	public String addToOrder(String orderItem) {
+		ArrayList<String> array = new ArrayList<String>();
+		
+		array.add(orderItem);
+		
+		
+		return "Added to Order";
+	}
+	
+	@GetMapping ("/getOrder")
 	public double getOrder(ArrayList<String> array)
 	{
-		double orderCost = coffeeService.getOrderCost(array);
+		double orderCost = coffeeService.orderTotal();
 		return orderCost;
-	}
+	}	
 
 }
