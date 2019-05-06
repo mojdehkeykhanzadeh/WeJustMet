@@ -1,6 +1,5 @@
 package com.sjsu.cmpe202.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,21 +57,13 @@ public class CoffeeController {
 		return "Deleted all records";
 	}
 	
-	@PostMapping ("/addToOrder")
-	public String addToOrder(String orderItem) {
-		ArrayList<String> array = new ArrayList<String>();
-		
-		array.add(orderItem);
-		
-		
-		return "Added to Order";
-	}
 	
 	@GetMapping ("/getOrder")
-	public double getOrder(ArrayList<String> array)
+	public double getOrder()
 	{
 		double orderCost = coffeeService.orderTotal();
 		return orderCost;
-	}	
-
+	}
+	
+	
 }
