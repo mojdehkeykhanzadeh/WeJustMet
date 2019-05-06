@@ -12,12 +12,12 @@ public class Payment {
 	@Id
 	private Integer id;
 	private double amount;
-	private Integer cardID;
+	private Integer cardNumber;
 	private Integer userId;
 	
-	public Payment( int id ,double amount ,Integer cardID,Integer userId) {
+	public Payment( int id ,double amount ,Integer userId,int cardNumber) {
 		this.id = id;
-		this.cardID = cardID ;
+		this.cardNumber = cardNumber;
 	    this.amount = amount ;
 	    this.userId = userId;
 	}
@@ -33,11 +33,11 @@ public class Payment {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	public Integer getCardID() {
-		return cardID;
+	public Integer getCardNumber() {
+		return cardNumber;
 	}
-	public void setCardId(Integer cardID) {
-		this.cardID = cardID;
+	public void setCardNumber(Integer cardNumber) {
+		this.cardNumber = cardNumber;
 	}
 	public Integer getUserId() {
 		return userId;

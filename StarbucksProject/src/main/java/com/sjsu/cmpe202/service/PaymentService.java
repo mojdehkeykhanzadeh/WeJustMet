@@ -16,11 +16,11 @@ public class PaymentService {
 	private CardDetailsRepository carddetailsrepository;
 	
 	
-	public Payment makePayment(Integer id,Integer cardID, double amount,int userId , int cardNumber ){
+	public Payment makePayment(Integer id, double amount,int userId , int cardNumber ){
 		CardDetails result = carddetailsrepository.findByUserId(userId , cardNumber);
 		 //if balance is sufficient , accept payment 
 		if(result.getAmount()>= amount) {
-			return paymentRepository.save(new Payment(id,amount, cardID , userId ));
+			return paymentRepository.save(new Payment(id,amount, userId,cardNumber ));
 		}
 		else 
 		return null;

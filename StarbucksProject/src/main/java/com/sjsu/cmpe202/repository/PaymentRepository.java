@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import com.sjsu.cmpe202.model.Payment;
 
 public interface PaymentRepository extends MongoRepository <Payment , Integer> {
-	List<Payment> findPaymentByCardID(@Param("CardID") Integer cardID);
+	List<Payment> findPaymentByCardNumber(@Param("CardNumber") Integer cardNumber);
 
 }
