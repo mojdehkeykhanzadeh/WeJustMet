@@ -1,5 +1,6 @@
 package com.sjsu.cmpe202.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,9 +60,9 @@ public class CoffeeController {
 	
 	
 	@GetMapping ("/getOrder")
-	public double getOrder()
+	public ArrayList<String> getOrder()
 	{
-		double orderCost = coffeeService.orderTotal();
+		ArrayList<String> orderCost = coffeeService.orderTotal();
 		return orderCost;
 	}
 	
