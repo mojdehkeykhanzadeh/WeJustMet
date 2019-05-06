@@ -1,8 +1,6 @@
 package com.sjsu.cmpe202.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Iterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,15 +11,20 @@ import com.sjsu.cmpe202.repository.CoffeeRepository;
 @Service
 public class CoffeeService {
 	
+	public static double orderPrice;
+	
 	@Autowired
 	private CoffeeRepository coffeeRepository;
+
 	
 	//Create operation
 	public Coffee create(String name, double price)
 	{
+		orderPrice += price;
 		return coffeeRepository.save(new Coffee(name, price));
 	}
 	
+
 	//Retrieve operation
 	public List<Coffee> getAll()
 	{
@@ -45,6 +48,7 @@ public class CoffeeService {
 	//Delete operation
 	public void deleteAll()
 	{
+		orderPrice = 0;
 		coffeeRepository.deleteAll();
 	}
 	
@@ -61,22 +65,9 @@ public class CoffeeService {
 		return cost;
 	}
 	
-	
-	
-	public double getOrderCost(ArrayList<String> array) 
+	public double orderTotal()
 	{
-		
-		ArrayList<String> order = array;
-		
-		double orderCost = 0.00;
-		
-		for(int i = 0; i < order.size(); i++)
-		{
-			Coffee p = coffeeRepository.findByName(order.get(i));
-			orderCost += p.getPrice();
-		}
-		
-		return orderCost;
+		return orderPrice;
 	}
-
+	
 }
