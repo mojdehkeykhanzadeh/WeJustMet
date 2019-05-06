@@ -87,5 +87,34 @@ public class CardDetailsService {
 
 	}
 	
+	public String updateBalance(int userID, int cardNumber, double amount) {
+		
+		Query query = new Query();
+		query.addCriteria(Criteria.where("userId").is(userID));
+		query.addCriteria(Criteria.where("cardNumber").is(cardNumber));
+		
+		CardDetails cardDetails = mongoTemplate.findOne(query, CardDetails.class);
+		cardDetails.setAmount(amount);
+		
+		
+		System.out.println("Updated document : " + cardDetails);
+		System.out.println("Updated document : " + cardDetails.getUserId());
+		System.out.println("Updated document : " + cardDetails.getCardNumber());
+
+		cardDetails = cardDetailsRepository.save(cardDetails);
+		
+		System.out.println("Updated document : " + cardDetails);
+		System.out.println("Updated document : " + cardDetails.getUserId());
+		System.out.println("Updated document : " + cardDetails.getCardNumber());
+		System.out.println("Updated document : " + cardDetails.getAmount());
+		
+		if(cardDetails != null) {
+			return "The amount is updated";
+		}
+		
+	 return "You dont have any such card";
+
+	}
+	
 	
 }
