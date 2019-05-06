@@ -21,9 +21,9 @@ public class StarbucksProjectController {
 	
 	
 	@RequestMapping(value = "/makePayment", method = RequestMethod.POST)
-    public ResponseEntity<String> postPayment(@RequestParam int id, @RequestParam Integer cardID, @RequestParam double amt,@RequestParam Integer userId) throws JsonProcessingException {
+    public ResponseEntity<String> postPayment(@RequestParam int id, @RequestParam Integer cardID, @RequestParam double amt,@RequestParam Integer userId,@RequestParam int cardNumber) throws JsonProcessingException {
         
-        Payment payment = paymentservice.makePayment(id,cardID, amt,userId);
+        Payment payment = paymentservice.makePayment(id,cardID, amt,userId,cardNumber);
         if(payment!=null) {
         return new ResponseEntity<>(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(payment),HttpStatus.OK);
         }else 
@@ -31,9 +31,9 @@ public class StarbucksProjectController {
 		
 	}
 	@RequestMapping(value = "/deductMoney", method = RequestMethod.POST)
-    public String deductMoney(@RequestParam Integer userId , double amt) throws JsonProcessingException {
+    public String deductMoney(@RequestParam Integer userId ,@RequestParam double amt,@RequestParam int cardNumber) throws JsonProcessingException {
         
-        double balance = paymentservice.deductMoney(userId, amt);
+        double balance = paymentservice.deductMoney(userId, amt,cardNumber);
       
         return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(balance);
 		

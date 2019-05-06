@@ -16,8 +16,8 @@ public class PaymentService {
 	private CardDetailsRepository carddetailsrepository;
 	
 	
-	public Payment makePayment(Integer id,Integer cardID, double amount,int userId ){
-		CardDetails result = carddetailsrepository.findByUserId(userId);
+	public Payment makePayment(Integer id,Integer cardID, double amount,int userId , int cardNumber ){
+		CardDetails result = carddetailsrepository.findByUserId(userId , cardNumber);
 		 //if balance is sufficient , accept payment 
 		if(result.getAmount()>= amount) {
 			return paymentRepository.save(new Payment(id,amount, cardID , userId ));
@@ -25,9 +25,9 @@ public class PaymentService {
 		else 
 		return null;
 	}
-	public double deductMoney(Integer userId, double amount){
+	public double deductMoney(Integer userId, double amount,int cardNumber){
 
-		CardDetails result = carddetailsrepository.findByUserId(userId);
+		CardDetails result = carddetailsrepository.findByUserId(userId,cardNumber);
         double newBal = result.getAmount() - amount;
         result.setAmount(newBal);
         carddetailsrepository.save(result);
