@@ -19,3 +19,20 @@ Communication- We communicated well through WhatsApp team channel for standup . 
 
 
 ---
+
+## Team Member : Rajalakshmi Babu
+---
+### What tasks did I work on / complete?
+
+I worked on designing on Add card API. Knowledge gathering on Spring boot application and implemented the add card api using the same. Comitting all the changes to Github and collborated with team members.
+
+### What am I planning to work on next?
+
+Integrate the APIs and deploy the backend application into AWS Elastic Container Services.
+
+### What tasks are blocked waiting on another team member?
+N/A
+
+### XP Core Values that kept throughout the project :
+
+Simplicity - Splitted the Add card API into granular level functionalities. Tried to achieve adding the card details first into the database. Next achieved in getting the balance of the card, deleting the card. Complex items are slowly built on top of the simple ones.
