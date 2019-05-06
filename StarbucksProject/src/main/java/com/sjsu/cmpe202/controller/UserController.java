@@ -19,26 +19,28 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class UserController {
 	@Autowired
 	private UserService userService;
-	//private ObjectMapper mapper = new ObjectMapper();
+	private ObjectMapper mapper = new ObjectMapper();
 	
 	@PostMapping("/createUser")
 	public String create(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String userNumber) throws JsonProcessingException {
 		User user = userService.create(email, firstName, lastName, userNumber);
-		return user.toString();
+		//return user.toString();
+		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(user);
 	}
 	
 	@GetMapping("/getUser")
-	public User getUser(@RequestParam String email) {
-		return userService.getByEmail(email);
+	public String getUser(@RequestParam String email) throws JsonProcessingException {
+		User user = userService.getByEmail(email);
+		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(user);
 	}
 	@GetMapping("/getAllUser")
 	public List<User> getAll(){
 		return userService.getAll();
 	}
 	@PostMapping("/updateUser")
-	public String update(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String userNumber) {
+	public String update(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String userNumber) throws JsonProcessingException {
 		User u = userService.update(email, firstName, lastName, userNumber);
-		return u.toString();
+		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(u);
 	}
 	@DeleteMapping("/deleteUser")
 	public String delete(@RequestParam String email) {
