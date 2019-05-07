@@ -23,20 +23,33 @@ public class CardDetailsService {
 	 @Autowired
 	    MongoTemplate mongoTemplate;
 
-	public CardDetails create(int id, int cardNumber, int cardCode, int userId, double amount) {
+	public String create(int id, int cardNumber, int cardCode, int userId, double amount) {
 	//	cardDetailsRepository.findByUserId(userID);
-		CardDetails cardDetails = getCardDetailsByUserId(userId);
-		if(cardDetails != null && cardDetails.getCardNumber() == cardNumber){
-			amount = cardDetails.getAmount() + amount;
-			cardDetails = cardDetailsRepository.save(new CardDetails(id, cardNumber, cardCode, userId, amount));
-		}else if (cardDetails == null){
-			cardDetails = cardDetailsRepository.save(new CardDetails(id, cardNumber, cardCode, userId, amount));
-		}
-		else{
-			cardDetails = null;
-		}
 		
-		return cardDetails;
+		String message = "";
+		
+		if(String.valueOf(cardNumber).length() != 9) {
+			message = "Entered card number is not valid";
+			
+		}else if(String.valueOf(cardCode).length() != 3) {
+			message = "Entered card code is not valid";
+		}else {
+		
+			CardDetails cardDetails = getCardDetailsByUserId(userId);
+			if(cardDetails != null && cardDetails.getCardNumber() == cardNumber){
+				amount = cardDetails.getAmount() + amount;
+				cardDetails = cardDetailsRepository.save(new CardDetails(id, cardNumber, cardCode, userId, amount));
+				message = amount + "$ is added to your card: " + cardNumber;
+			}else if (cardDetails == null){
+				cardDetails = cardDetailsRepository.save(new CardDetails(id, cardNumber, cardCode, userId, amount));
+				message = "Card is created successfully";
+			}
+			else{
+				cardDetails = null;
+				message = "You already have a card. Please recharge in the same";
+			}
+		}
+		return message;
 	}
 	
 	public CardDetails getBalance(int userID, int cardNumber) {

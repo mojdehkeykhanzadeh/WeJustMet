@@ -21,19 +21,16 @@ public class CardDetailsController {
 	public CardDetailsService cardDetailsService;
 	
 	
-	private ObjectMapper mapper = new ObjectMapper();
+	//private ObjectMapper mapper = new ObjectMapper();
 	
 	
 	@PostMapping("/createCard")
 	public String create(@RequestParam int id, @RequestParam int cardNumber, @RequestParam int cardCode, @RequestParam int userId, @RequestParam double amount) throws JsonProcessingException {
-		CardDetails cardDetails = cardDetailsService.create(userId, cardNumber, cardCode, userId, amount);
+		return cardDetailsService.create(userId, cardNumber, cardCode, userId, amount);
 		
-		if(cardDetails == null) {
-			String message = "You already have a card. Please recharge in the same";
-			return message;
-		}
 		
-		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cardDetails);
+		
+		//return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cardDetails);
 	}
 	
 	@GetMapping("/getBalance")
