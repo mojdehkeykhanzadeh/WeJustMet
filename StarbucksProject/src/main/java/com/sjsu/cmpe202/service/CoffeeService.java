@@ -1,5 +1,6 @@
 package com.sjsu.cmpe202.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import com.sjsu.cmpe202.repository.CoffeeRepository;
 public class CoffeeService {
 	
 	public static double orderPrice;
+	public static ArrayList<String> orderFinal;
 	
 	@Autowired
 	private CoffeeRepository coffeeRepository;
@@ -21,6 +23,7 @@ public class CoffeeService {
 	public Coffee create(String name, double price)
 	{
 		orderPrice += price;
+		orderFinal.add(name);
 		return coffeeRepository.save(new Coffee(name, price));
 	}
 	
@@ -65,9 +68,12 @@ public class CoffeeService {
 		return cost;
 	}
 	
-	public double orderTotal()
+	public ArrayList<String> orderTotal()
 	{
-		return orderPrice;
+		
+		orderFinal.add(Double.toString(orderPrice));
+		
+		return orderFinal;
 	}
 	
 }

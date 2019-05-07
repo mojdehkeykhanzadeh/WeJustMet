@@ -1,5 +1,6 @@
 package com.example.mojdehkeykhanzadeh.starbucksapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,9 +22,10 @@ public class AddCardActivity extends AppCompatActivity {
     private EditText cardCodeText;
     private EditText amountText;
     private Button submitBtn;
-    private String cardId;
-    private String cardCode;
+     String cardId;
+     String cardCode;
     private String amount;
+    private Button btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +35,20 @@ public class AddCardActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Stream started", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "Add Card Response", Toast.LENGTH_SHORT).show();
                 addCard();
             }
         });
+        btn2 = (Button) findViewById(R.id.button2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), PaymentActivity.class);
+                intent.putExtra("card number", cardId);
+                startActivity(intent);
+            }
+        });
+
     }
     public void addCard(){
         cardIdText = findViewById(R.id.cardId);
