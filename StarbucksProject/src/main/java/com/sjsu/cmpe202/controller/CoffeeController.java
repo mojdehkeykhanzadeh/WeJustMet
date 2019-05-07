@@ -59,11 +59,16 @@ public class CoffeeController {
 	}
 	
 	
-	@GetMapping ("/getOrder")
-	public ArrayList<String> getOrder()
+	@GetMapping ("/getOrderItems")
+	public ArrayList<String> getItems()
 	{
-		ArrayList<String> orderCost = coffeeService.orderTotal();
-		return orderCost;
+		return coffeeService.getOrderItems();
+	}
+	
+	@GetMapping ("/getOrderPrice")
+	public double getPrice()
+	{
+		return coffeeService.getOrderPrice();
 	}
 	
 	

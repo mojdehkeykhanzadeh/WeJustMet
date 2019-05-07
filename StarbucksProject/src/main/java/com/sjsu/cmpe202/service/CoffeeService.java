@@ -13,7 +13,8 @@ import com.sjsu.cmpe202.repository.CoffeeRepository;
 public class CoffeeService {
 	
 	public static double orderPrice;
-	public static ArrayList<String> orderFinal;
+	public static ArrayList<String> orderFinal = new ArrayList<String>();
+
 	
 	@Autowired
 	private CoffeeRepository coffeeRepository;
@@ -22,8 +23,9 @@ public class CoffeeService {
 	//Create operation
 	public Coffee create(String name, double price)
 	{
-		orderPrice += price;
+		orderPrice += price;		
 		orderFinal.add(name);
+		
 		return coffeeRepository.save(new Coffee(name, price));
 	}
 	
@@ -52,6 +54,7 @@ public class CoffeeService {
 	public void deleteAll()
 	{
 		orderPrice = 0;
+		orderFinal.clear();
 		coffeeRepository.deleteAll();
 	}
 	
@@ -67,13 +70,17 @@ public class CoffeeService {
 		double cost = p.getPrice();
 		return cost;
 	}
+
 	
-	public ArrayList<String> orderTotal()
-	{
-		
-		orderFinal.add(Double.toString(orderPrice));
-		
+	public ArrayList<String> getOrderItems()
+	{		
 		return orderFinal;
 	}
+	
+	public double getOrderPrice()
+	{
+		return orderPrice;
+	}
+	
 	
 }
