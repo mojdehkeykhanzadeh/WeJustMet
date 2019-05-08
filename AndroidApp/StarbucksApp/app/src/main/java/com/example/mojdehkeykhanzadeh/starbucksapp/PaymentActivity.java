@@ -42,7 +42,7 @@ public class PaymentActivity extends AppCompatActivity {
     }
     public void getBalance() {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String URL = "http://10.0.2.2:8080/getBalance?userId=12345&cardNumber="+cardNumber;
+        String URL = "http://192.168.0.11:8080/getBalance?userId=12345&cardNumber="+cardNumber;
         StringRequest objectRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override

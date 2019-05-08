@@ -1,5 +1,6 @@
 package com.example.mojdehkeykhanzadeh.starbucksapp;
 
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,49 +18,50 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-public class AddCardActivity extends AppCompatActivity {
-    private EditText cardIdText;
-    private EditText cardCodeText;
-    private EditText amountText;
-    private Button submitBtn;
-     String cardId;
-     String cardCode;
-    private String amount;
-    private Button btn2;
+public class RegisterUser extends AppCompatActivity {
+    private EditText email;
+    private EditText password;
+    private EditText firstName;
+    private EditText lastName;
+    private EditText userId;
+    private Button buttonRegister;
+
+    String emailText;
+    String passwordText;
+    String firstNameText;
+    String lastNameText;
+    String userIdText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_card);
-        submitBtn = findViewById(R.id.submit);
-        submitBtn.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_register_user);
+        buttonRegister = findViewById(R.id.buttonRegister);
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Add Card Response", Toast.LENGTH_SHORT).show();
-                addCard();
-            }
-        });
-        btn2 = (Button) findViewById(R.id.button2);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), PaymentActivity.class);
-                intent.putExtra("card number", cardId);
-                startActivity(intent);
+                Toast.makeText(getBaseContext(), "Add User Response", Toast.LENGTH_SHORT).show();
+                addUser();
             }
         });
 
+
     }
-    public void addCard(){
-        cardIdText = findViewById(R.id.cardId);
-        cardCodeText = findViewById(R.id.cardCode);
-        amountText = findViewById(R.id.amount);
-        cardId = cardIdText.getText().toString();
-        cardCode = cardCodeText.getText().toString();
-        amount= amountText.getText().toString();
-        int random = (int)(Math.random() * 50 + 1);
-        String URL = "http://192.168.0.11:8080/createCard?id="+random+"&cardNumber="+cardId+"&cardCode="
-                +cardCode+"&userId=12345"+"&amount="+amount;
+
+    public void addUser(){
+        email = findViewById(R.id.editTextEmail);
+        password = findViewById(R.id.editTextPassword);
+        firstName = findViewById(R.id.editTextFirstName);
+        lastName = findViewById(R.id.editTextLastName);
+        userId = findViewById(R.id.editTextUserId);
+
+        emailText=email.getText().toString();
+        passwordText=password.getText().toString();
+        firstNameText=firstName.getText().toString();
+        lastNameText=lastName.getText().toString();
+        userIdText=userId.getText().toString();//12345
+        String URL = "http://192.168.0.11:8080/createUser?email="+emailText+"&password="+passwordText+"&firstName="+firstNameText+"&lastName="+lastNameText+"&userId="+userIdText;
+        //http://localhost:8080/createUser?email=ss@ji.com&password=1234&firstName=Ko&lastName=Polk&userId=12345
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         StringRequest objectRequest = new StringRequest(Request.Method.POST, URL,
@@ -83,6 +85,8 @@ public class AddCardActivity extends AppCompatActivity {
 
         };
         requestQueue.add(objectRequest);
+
     }
 
 }
+
