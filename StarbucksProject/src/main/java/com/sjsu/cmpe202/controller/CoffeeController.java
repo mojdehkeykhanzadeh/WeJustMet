@@ -15,57 +15,62 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sjsu.cmpe202.model.Coffee;
 import com.sjsu.cmpe202.service.CoffeeService;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @RestController
 public class CoffeeController {
 	
 	@Autowired
 	private CoffeeService coffeeService;
+	private ObjectMapper mapper = new ObjectMapper();
 
 	
-	@PostMapping("/create")
-	public String create(@RequestParam String name, @RequestParam double price)
+	@PostMapping("/createOrder")
+	public String create(@RequestParam String name, @RequestParam double price) throws JsonProcessingException
 	{
-		Coffee p = coffeeService.create(name, price);
-		return p.toString();
+		Coffee c = coffeeService.create(name, price);
+		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(c);
 	}
 	
-	@GetMapping("/get")
-	public Coffee getCoffee(@RequestParam String name)
+	@GetMapping("/getOrderByName")
+	public String getCoffee(@RequestParam String name) throws JsonProcessingException
 	{
-		return coffeeService.getByName(name);
+		Coffee c = coffeeService.getByName(name);
+		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(c);
 	}
 	
-	@GetMapping("/getAll")
+	@GetMapping("/getAllOrder")
 	public List<Coffee> getAll(){
 		return coffeeService.getAll();
 	}
 	
-	@PostMapping("/update")
-	public String update(@RequestParam String name, @RequestParam double price) {
+	@PostMapping("/updateOrder")
+	public String update(@RequestParam String name, @RequestParam double price) throws JsonProcessingException {
 		Coffee p = coffeeService.update(name, price);
-		return p.toString();
+		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(p);
 	}
 	
-	@PostMapping("/delete")
+	@PostMapping("/deleteOrderByName")
 	public String delete(@RequestParam String name) {
 		coffeeService.delete(name);
 		return "Deleted " + name;
 	}
 	
-	@DeleteMapping ("/deleteAll")
+	@DeleteMapping ("/deleteAllOrder")
 	public String deleteAll() {
 		coffeeService.deleteAll();
 		return "Deleted all records";
 	}
 	
 	
-	@GetMapping ("/getOrderItems")
+	@GetMapping ("/getTotalOrderItems")
 	public ArrayList<String> getItems()
 	{
 		return coffeeService.getOrderItems();
 	}
 	
-	@GetMapping ("/getOrderPrice")
+	@GetMapping ("/getTotalOrderPrice")
 	public double getPrice()
 	{
 		return coffeeService.getOrderPrice();
