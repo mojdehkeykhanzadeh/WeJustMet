@@ -8,15 +8,17 @@ public class User {
 	@Id
 	String Id; 
 	String email;
+	String password;
 	String firstName;
 	String lastName;
-	String userNumber;
+	String userId;
 	
-	public User(String email, String firstName, String lastName, String userNumber) {
+	public User(String email, String password ,String firstName, String lastName, String userId) {
 		this.email = email;
+		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.userNumber = userNumber;
+		this.userId = userId;
 		 
 	}
 
@@ -27,6 +29,14 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}	
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 	public String getFirstName() {
 		return firstName;
@@ -44,17 +54,17 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getUserNumber() {
-		return userNumber;
+	public String getUserId() {
+		return userId;
 	}
 	
-	public void setUserNumber(String userNumber) {
-		this.userNumber = userNumber;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	
 
 	public String toString() {
-		 return "User Email: " + email + " First Name: " + firstName + " Last Name: " +lastName +" User Number: "+ userNumber;
+		 return "User Email: " + email + " User Passwrod: " + password + " First Name: " + firstName + " Last Name: " +lastName +" User Id: "+ userId;
 	}
 	
 }

@@ -22,14 +22,14 @@ public class UserController {
 	private ObjectMapper mapper = new ObjectMapper();
 	
 	@PostMapping("/createUser")
-	public String create(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String userNumber) throws JsonProcessingException {
-		User user = userService.create(email, firstName, lastName, userNumber);
+	public String create(@RequestParam String email, @RequestParam String password,@RequestParam String firstName, @RequestParam String lastName, @RequestParam String userId) throws JsonProcessingException {
+		User user = userService.create(email, password, firstName, lastName, userId);
 		//return user.toString();
 		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(user);
 	}
 	
-	@GetMapping("/getUser")
-	public String getUser(@RequestParam String email) throws JsonProcessingException {
+	@GetMapping("/getUserByEmail")
+	public String getUserByEmail(@RequestParam String email) throws JsonProcessingException {
 		User user = userService.getByEmail(email);
 		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(user);
 	}
@@ -38,8 +38,8 @@ public class UserController {
 		return userService.getAll();
 	}
 	@PostMapping("/updateUser")
-	public String update(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String userNumber) throws JsonProcessingException {
-		User u = userService.update(email, firstName, lastName, userNumber);
+	public String update(@RequestParam String email, @RequestParam String password, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String userId) throws JsonProcessingException {
+		User u = userService.update(email, password, firstName, lastName, userId);
 		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(u);
 	}
 	@DeleteMapping("/deleteUser")

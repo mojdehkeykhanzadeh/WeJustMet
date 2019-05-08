@@ -16,8 +16,8 @@ public class UserService {
 	
 	
 	//Create operation
-	public User create (String email, String firstName, String lastName, String userNumber) {
-		return userRepository.save(new User(email, firstName, lastName, userNumber));
+	public User create (String email, String password ,String firstName, String lastName, String userId) {
+		return userRepository.save(new User(email, password, firstName, lastName, userId));
 	}
 	//Retrieve operation
 	public List<User> getAll(){
@@ -29,11 +29,12 @@ public class UserService {
 	}
 	
 	//Update operation
-	public User update(String email, String firstName, String lastName, String userNumber) {
+	public User update(String email, String password, String firstName, String lastName, String userId) {
 		User u  = userRepository.findByEmail(email);
+		u.setPassword(password);
 		u.setFirstName(firstName);
 		u.setLastName(lastName);
-		u.setUserNumber(userNumber);
+		u.setUserId(userId);
 		return userRepository.save(u);
 	}
 	

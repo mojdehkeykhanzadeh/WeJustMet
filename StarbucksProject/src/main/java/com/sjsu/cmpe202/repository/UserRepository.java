@@ -10,6 +10,6 @@ import com.sjsu.cmpe202.model.User;
 @Repository
 public interface UserRepository extends MongoRepository<User, String>{
 	public User findByEmail(String email);
-	public List<User> findByUserNumber (String userNumber);
+	public List<User> findByUserId (String Id);
 
 }
