@@ -55,3 +55,22 @@ N/A
 ### XP Core Values that kept throughout the project:
 
 Feedback - We have a team with 4 memebers. Each member worked on an API independently, but stay connected. Thus, we could check each member's status and this will make our future integration much more efficiently. For example, we discussed about how each API works with other APIs and made suggestions for values to be shared.
+
+
+## Team Member: Tommy Yao
+---
+### What tasks did I work on / complete?
+
+My main goal for this week was to implement Coffee Order API. The functionality is to add order items to the database, and add retrieval methods. Committing all changes to GitHub, and syncing up with groupmates regarding requiredmens.
+
+### What am I planning to work on next?
+
+Work on JUnit test cases for all APIs.
+
+### What tasks are blocked waiting on another team member?
+N/A
+
+### XP Core Values that kept throughout the project:
+
+Feedback - Splinting the work of the API to each team member as well as the remaining work load to each memeber.
+
