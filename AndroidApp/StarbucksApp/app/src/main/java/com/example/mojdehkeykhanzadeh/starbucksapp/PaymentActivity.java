@@ -1,6 +1,9 @@
 package com.example.mojdehkeykhanzadeh.starbucksapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,8 +44,12 @@ public class PaymentActivity extends AppCompatActivity {
         });
     }
     public void getBalance() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sp = getSharedPreferences("My Pref", Context.MODE_PRIVATE);
+        String cardId = sp.getString("cardId","defaultvalue");
+        Log.e("card ID ==== !", cardId);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String URL = "http://192.168.0.11:8080/getBalance?userId=12345&cardNumber="+cardNumber;
+        String URL = "http://10.0.2.2:8080/getBalance?userId=12345&cardNumber="+cardNumber;
         StringRequest objectRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override

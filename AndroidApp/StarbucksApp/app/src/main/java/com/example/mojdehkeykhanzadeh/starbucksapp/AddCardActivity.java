@@ -1,6 +1,8 @@
 package com.example.mojdehkeykhanzadeh.starbucksapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -57,8 +59,12 @@ public class AddCardActivity extends AppCompatActivity {
         cardId = cardIdText.getText().toString();
         cardCode = cardCodeText.getText().toString();
         amount= amountText.getText().toString();
+        SharedPreferences sp = getSharedPreferences("My Pref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("cardId",cardId);
+        editor.commit();
         int random = (int)(Math.random() * 50 + 1);
-        String URL = "http://192.168.0.11:8080/createCard?id="+random+"&cardNumber="+cardId+"&cardCode="
+        String URL = "http://10.0.2.2:8080/createCard?id="+random+"&cardNumber="+cardId+"&cardCode="
                 +cardCode+"&userId=12345"+"&amount="+amount;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
