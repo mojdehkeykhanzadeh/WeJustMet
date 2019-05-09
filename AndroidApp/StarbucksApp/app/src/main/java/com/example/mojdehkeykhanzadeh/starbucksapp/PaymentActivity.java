@@ -25,14 +25,21 @@ public class PaymentActivity extends AppCompatActivity {
     private String balance;
     private String cardNumber;
     private Button pay;
+    private String cardId;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
-        Intent intent = getIntent();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sp = getSharedPreferences("My Pref", Context.MODE_PRIVATE);
+        cardId = sp.getString("cardId","defaultvalue");
+        Log.e("card ID ==== !", cardId);
+        userId = sp.getString("userId","defaultvalue");
+      /*  Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        cardNumber= bundle.getString("card number");
+        cardNumber= bundle.getString("card number");*/
         getBalance();
         pay = findViewById(R.id.buttonPay);
         pay.setOnClickListener(new View.OnClickListener() {
@@ -44,12 +51,8 @@ public class PaymentActivity extends AppCompatActivity {
         });
     }
     public void getBalance() {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences sp = getSharedPreferences("My Pref", Context.MODE_PRIVATE);
-        String cardId = sp.getString("cardId","defaultvalue");
-        Log.e("card ID ==== !", cardId);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String URL = "http://10.0.2.2:8080/getBalance?userId=12345&cardNumber="+cardNumber;
+        String URL = "http://10.0.2.2:8080/getBalance?userId="+userId+"&cardNumber="+cardId;
         StringRequest objectRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
@@ -74,8 +77,8 @@ public class PaymentActivity extends AppCompatActivity {
     }
     public void makePayment(){
         int random = (int)(Math.random() * 50 + 1);
-        String URL ="http://10.0.2.2:8080/makePayment?id="+random+"&cardNumber=" +cardNumber+
-                "&amount= 10.00&userId= 12345";;
+        String URL ="http://10.0.2.2:8080/makePayment?id="+random+"&cardNumber=" +cardId+
+                "&amount= 10.00&userId="+userId;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         StringRequest objectRequest = new StringRequest(Request.Method.POST, URL,

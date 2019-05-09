@@ -28,11 +28,14 @@ public class AddCardActivity extends AppCompatActivity {
      String cardCode;
     private String amount;
     private Button btn2;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_card);
+        SharedPreferences sp = getSharedPreferences("My Pref", Context.MODE_PRIVATE);
+        userId = sp.getString("userId","defaultvalue");
         submitBtn = findViewById(R.id.submit);
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,12 +44,12 @@ public class AddCardActivity extends AppCompatActivity {
                 addCard();
             }
         });
-        btn2 = (Button) findViewById(R.id.button2);
+        btn2 = findViewById(R.id.button2);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), PaymentActivity.class);
-                intent.putExtra("card number", cardId);
+//                intent.putExtra("card number", cardId);
                 startActivity(intent);
             }
         });
@@ -65,7 +68,7 @@ public class AddCardActivity extends AppCompatActivity {
         editor.commit();
         int random = (int)(Math.random() * 50 + 1);
         String URL = "http://10.0.2.2:8080/createCard?id="+random+"&cardNumber="+cardId+"&cardCode="
-                +cardCode+"&userId=12345"+"&amount="+amount;
+                +cardCode+"&userId="+userId+"&amount="+amount;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         StringRequest objectRequest = new StringRequest(Request.Method.POST, URL,
