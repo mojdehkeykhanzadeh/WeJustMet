@@ -62,6 +62,8 @@ public class CoffeeService {
 	{
 		Coffee p = coffeeRepository.findByName(name);
 		coffeeRepository.delete(p);
+		Coffee c = coffeeRepository.findByName(name);
+		orderPrice -= c.getPrice();
 	}
 	
 	public double getCostByName(String name)
