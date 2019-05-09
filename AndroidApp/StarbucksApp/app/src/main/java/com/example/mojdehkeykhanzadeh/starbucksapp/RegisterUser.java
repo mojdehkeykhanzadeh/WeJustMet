@@ -1,7 +1,9 @@
 package com.example.mojdehkeykhanzadeh.starbucksapp;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -60,6 +62,12 @@ public class RegisterUser extends AppCompatActivity {
         firstNameText=firstName.getText().toString();
         lastNameText=lastName.getText().toString();
         userIdText=userId.getText().toString();//12345
+
+        SharedPreferences sp = getSharedPreferences("My Pref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("userId",userIdText);
+        editor.commit();
+
         String URL = "http://192.168.0.11:8080/createUser?email="+emailText+"&password="+passwordText+"&firstName="+firstNameText+"&lastName="+lastNameText+"&userId="+userIdText;
         //http://localhost:8080/createUser?email=ss@ji.com&password=1234&firstName=Ko&lastName=Polk&userId=12345
         RequestQueue requestQueue = Volley.newRequestQueue(this);
