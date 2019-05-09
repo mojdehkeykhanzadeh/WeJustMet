@@ -51,7 +51,7 @@ public class CoffeeController {
 		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(p);
 	}
 	
-	@PostMapping("/deleteOrderByName")
+	@DeleteMapping("/deleteOrderByName")
 	public String delete(@RequestParam String name) {
 		coffeeService.delete(name);
 		return "Deleted " + name;

@@ -1,5 +1,6 @@
 package com.sjsu.cmpe202.service;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class CoffeeService {
 	
 	public static double orderPrice;
 	public static ArrayList<String> orderFinal = new ArrayList<String>();
+    private static DecimalFormat df = new DecimalFormat("0.00");
 
 	
 	@Autowired
@@ -23,7 +25,8 @@ public class CoffeeService {
 	//Create operation
 	public Coffee create(String name, double price)
 	{
-		orderPrice += price;		
+		orderPrice += price;
+		df.format(orderPrice);
 		orderFinal.add(name);
 		
 		return coffeeRepository.save(new Coffee(name, price));
@@ -53,7 +56,8 @@ public class CoffeeService {
 	//Delete operation
 	public void deleteAll()
 	{
-		orderPrice = 0;
+		orderPrice = 0.00;
+		df.format(orderPrice);
 		orderFinal.clear();
 		coffeeRepository.deleteAll();
 	}
@@ -64,6 +68,7 @@ public class CoffeeService {
 		coffeeRepository.delete(p);
 		Coffee c = coffeeRepository.findByName(name);
 		orderPrice -= c.getPrice();
+		df.format(orderPrice);
 	}
 	
 	public double getCostByName(String name)
@@ -81,6 +86,7 @@ public class CoffeeService {
 	
 	public double getOrderPrice()
 	{
+		df.format(orderPrice);
 		return orderPrice;
 	}
 	
