@@ -23,17 +23,16 @@ Feedback- was a key role in my success in integrating my part with whole applica
 ## Team Member : Rajalakshmi Babu
 ---
 ### What tasks did I work on / complete?
-
+I worked on deploying the whole application into AWS Elastic Container Services. Documented my part as part of final submission of the project.
 
 ### What am I planning to work on next?
-
-
+N/A
 
 ### What tasks are blocked waiting on another team member?
 N/A
 
 ### XP Core Values that kept throughout the project :
-
+I kept the value of Simplicity throughout the project. I disintegrated complex items into small doable items. Prioritized the simple tasks to achieve the output. Example. I deployed Add card API into the docker containers and troubleshooted if any errors. Then followed to build on top of deploying each API.
 
 
 ---
