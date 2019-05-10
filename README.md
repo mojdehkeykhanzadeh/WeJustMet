@@ -55,4 +55,10 @@
 #### 9) Create Task definition by using the image
 #### 10)Run the task in the cluster using the task definition
 
+# Steps to run Android App
+#### 1)Build Project by Running 
+- Clean Project 
+-  Make Project
+#### 2) Create New Virtual Device ( version Oreo) and run the app
+Note for running on ECS instance the endpoint URL needs to be updated as not checked in
 
