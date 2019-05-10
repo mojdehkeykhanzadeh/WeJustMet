@@ -62,12 +62,14 @@ public class CoffeeService {
 		coffeeRepository.deleteAll();
 	}
 	
-	public void delete(String name)
+	public void delete(String name, double price)
 	{
-		Coffee p = coffeeRepository.findByName(name);
-		coffeeRepository.delete(p);
-		Coffee c = coffeeRepository.findByName(name);
-		orderPrice -= c.getPrice();
+		//Coffee p = coffeeRepository.findByName(name);
+		//orderPrice -= p.getPrice();
+		//coffeeRepository.delete(p);
+		
+		orderPrice -= price;
+		orderFinal.remove(name);
 		df.format(orderPrice);
 	}
 	

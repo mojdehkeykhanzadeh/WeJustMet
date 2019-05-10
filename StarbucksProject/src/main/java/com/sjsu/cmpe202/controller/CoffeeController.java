@@ -52,8 +52,8 @@ public class CoffeeController {
 	}
 	
 	@DeleteMapping("/deleteOrderByName")
-	public String delete(@RequestParam String name) {
-		coffeeService.delete(name);
+	public String delete(@RequestParam String name, @RequestParam double price) {
+		coffeeService.delete(name, price);
 		return "Deleted " + name;
 	}
 	
