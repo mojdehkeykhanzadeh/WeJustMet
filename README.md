@@ -1,17 +1,16 @@
-# WeJustMet
+### WeJustMet
 ## Team Members
 
 | Name | ID |
 | --- | --- |
 | Rajalakshmi Babu | 011486345 |
 | Mojdeh Keykhanzadeh | 008129589 |
+| Nathan (Sangwon) |  |
+| Tommy |  |
 
-## Rajalakshmi Babu - 011486345
-## Mojdeh Keykhanzadeh - 008129589
-## Nathan (Sangwon)
-## Tommy
 
-#Tasks
+
+## Tasks
 ## Rajalakshmi Babu - Add Card API
 ## Mojdeh - Payment API , Android App (Add Card and Payment Screen)
 ## Nathan (Sangwon) - User Profile API
