@@ -16,7 +16,7 @@
 ### Nathan (Sangwon) - User Profile API
 ### Tommy - Order API
 
-# Architecture Diagram
+# Architecture Diagram (MVC Pattern)
 ![image](https://user-images.githubusercontent.com/30476448/57498846-5cd89400-7292-11e9-9aac-5a00b9244779.png)
 
 # Components Diagram
@@ -29,19 +29,19 @@
 
 ## Register User Screen
 
-![image](https://user-images.githubusercontent.com/33049718/57508892-a38cb500-72b7-11e9-94a4-6832603a97ab.png)
+![image](https://user-images.githubusercontent.com/33049718/57509035-0a11d300-72b8-11e9-8dea-e8d7b7ddae65.png)
 
 ## Manage Order Screen 
 
-![image](https://user-images.githubusercontent.com/33049718/57508953-cfa83600-72b7-11e9-83c9-624bbd30cc2c.png)
+![image](https://user-images.githubusercontent.com/33049718/57538088-7d3d3880-72fc-11e9-8d8b-ff7791ba3285.png)
 
 ## Add Card Screen
 
-![image](https://user-images.githubusercontent.com/33049718/57508999-ee0e3180-72b7-11e9-93b1-9f2f2d1a258c.png)
+![image](https://user-images.githubusercontent.com/33049718/57538117-91813580-72fc-11e9-8559-e57579695bd4.png)
 
 ## Payment Screen
 
-![image](https://user-images.githubusercontent.com/33049718/57509035-0a11d300-72b8-11e9-8dea-e8d7b7ddae65.png)
+![image](https://user-images.githubusercontent.com/33049718/57538178-b2498b00-72fc-11e9-8042-137579f49f04.png)
 
 # Steps to setup the backend project 
 #### 1) Clone the project using the command- git clone {repository}
