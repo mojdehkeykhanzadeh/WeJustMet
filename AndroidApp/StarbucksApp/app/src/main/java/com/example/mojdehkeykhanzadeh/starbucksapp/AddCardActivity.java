@@ -67,7 +67,8 @@ public class AddCardActivity extends AppCompatActivity {
         editor.putString("cardId",cardId);
         editor.commit();
         int random = (int)(Math.random() * 50 + 1);
-        String URL = "http://10.0.2.2:8080/createCard?id="+random+"&cardNumber="+cardId+"&cardCode="
+        //http://10.0.2.2:8080
+        String URL = "http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/createCard?id="+random+"&cardNumber="+cardId+"&cardCode="
                 +cardCode+"&userId="+userId+"&amount="+amount;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 

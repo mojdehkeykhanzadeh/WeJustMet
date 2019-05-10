@@ -180,7 +180,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void addOrder(String item, double price){
-        String URL = "http://10.0.2.2:8080/createOrder?name="+item+"&price="+price;
+        String URL = "http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/createOrder?name="+item+"&price="+price;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         StringRequest objectRequest = new StringRequest(Request.Method.POST, URL,
@@ -207,7 +207,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void deleteOrder(String name, double price){
-        String URL = "http://10.0.2.2:8080/deleteOrderByName?name="+name+"&price="+price;
+        String URL = "http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/deleteOrderByName?name="+name+"&price="+price;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest objectRequest = new StringRequest(Request.Method.DELETE, URL,
                 new Response.Listener<String>() {
@@ -233,7 +233,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void getTotalPrice(){
-        String URL = "http://10.0.2.2:8080/getTotalOrderPrice";
+        String URL = "http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/getTotalOrderPrice";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest objectRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
@@ -271,7 +271,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     public void getTotalOrder(){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String URL = "http://10.0.2.2:8080/getTotalOrderItems";
+        String URL = "http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/getTotalOrderItems";
         StringRequest objectRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
@@ -295,7 +295,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     public void clearOrder(){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String URL = "http://10.0.2.2:8080/deleteAllOrder";
+        String URL = "http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/deleteAllOrder";
         StringRequest objectRequest = new StringRequest(Request.Method.DELETE, URL,
                 new Response.Listener<String>() {
                     @Override

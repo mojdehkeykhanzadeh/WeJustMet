@@ -85,7 +85,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         int random = (int)(Math.random() * 50 + 1);
 
 
-        String URL = "http://10.0.2.2:8080/createUser?Id="+random+"&email="+emailText+"&password="+passwordText+"&firstName="+firstNameText+"&lastName="+lastNameText+"&userId="+userIdText;
+        String URL = "http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/createUser?Id="+random+"&email="+emailText+"&password="+passwordText+"&firstName="+firstNameText+"&lastName="+lastNameText+"&userId="+userIdText;
         //http://localhost:8080/createUser?email=ss@ji.com&password=1234&firstName=Ko&lastName=Polk&userId=12345
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 

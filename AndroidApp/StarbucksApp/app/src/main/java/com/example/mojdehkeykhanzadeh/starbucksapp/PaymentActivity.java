@@ -73,7 +73,7 @@ public class PaymentActivity extends AppCompatActivity {
     }
     public void getBalance() {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String URL = "http://10.0.2.2:8080/getBalance?userId="+userId+"&cardNumber="+cardId;
+        String URL = "http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/getBalance?userId="+userId+"&cardNumber="+cardId;
         StringRequest objectRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
@@ -98,7 +98,7 @@ public class PaymentActivity extends AppCompatActivity {
     }
     public void makePayment(){
         int random = (int)(Math.random() * 50 + 1);
-        String URL ="http://10.0.2.2:8080/makePayment?id="+random+"&cardNumber=" +cardId+
+        String URL ="http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/makePayment?id="+random+"&cardNumber=" +cardId+
                 "&amount="+total+"&userId="+userId;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
@@ -125,7 +125,7 @@ public class PaymentActivity extends AppCompatActivity {
         requestQueue.add(objectRequest);
     }
     public void updateBalance(){
-        String URL ="http://10.0.2.2:8080/deductMoney?userId="+userId+"&cardNumber=" +cardId+
+        String URL ="http://ec2-3-83-145-196.compute-1.amazonaws.com:8080/deductMoney?userId="+userId+"&cardNumber=" +cardId+
                 "&amt="+total;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
