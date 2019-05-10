@@ -13,13 +13,23 @@ public class User {
 	String lastName;
 	String userId;
 	
-	public User(String email, String password ,String firstName, String lastName, String userId) {
+	public User(int Id, String email, String password ,String firstName, String lastName, String userId) {
+		this.Id = Id;
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userId = userId;
 		 
+	}
+	
+
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
 	}
 
 	public String getEmail() {

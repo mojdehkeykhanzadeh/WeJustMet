@@ -205,7 +205,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
                         totalPriceTextView.setText(total);
 
                         SharedPreferences sp = getSharedPreferences("My Pref", Context.MODE_PRIVATE);
-                        totalShare = sp.getString("totalPrice",total);
+                        totalShare = sp.getString("totalShare",total);
                         Log.e("Total Price ==== !", totalShare);
 
                     }

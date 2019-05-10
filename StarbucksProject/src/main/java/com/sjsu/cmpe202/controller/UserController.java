@@ -22,8 +22,8 @@ public class UserController {
 	private ObjectMapper mapper = new ObjectMapper();
 	
 	@PostMapping("/createUser")
-	public String create(@RequestParam String email, @RequestParam String password,@RequestParam String firstName, @RequestParam String lastName, @RequestParam String userId) throws JsonProcessingException {
-		User user = userService.create(email, password, firstName, lastName, userId);
+	public String create(@RequestParam int Id, @RequestParam String email, @RequestParam String password,@RequestParam String firstName, @RequestParam String lastName, @RequestParam String userId) throws JsonProcessingException {
+		User user = userService.create(Id, email, password, firstName, lastName, userId);
 		//return user.toString();
 		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(user);
 	}

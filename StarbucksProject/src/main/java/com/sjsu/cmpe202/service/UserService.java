@@ -16,8 +16,8 @@ public class UserService {
 	
 	
 	//Create operation
-	public User create (String email, String password ,String firstName, String lastName, String userId) {
-		return userRepository.save(new User(email, password, firstName, lastName, userId));
+	public User create (int Id, String email, String password ,String firstName, String lastName, String userId) {
+		return userRepository.save(new User(Id, email, password, firstName, lastName, userId));
 	}
 	//Retrieve operation
 	public List<User> getAll(){
