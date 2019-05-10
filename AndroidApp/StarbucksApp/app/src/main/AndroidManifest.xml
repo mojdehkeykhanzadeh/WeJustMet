@@ -17,9 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-            <activity android:name=".AddCardActivity" />
-            <activity android:name=".PaymentActivity" />
-            <activity android:name=".RegisterUser" >
+        <activity android:name=".AddCardActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".RegisterUser" />
+        <activity android:name=".OrderActivity">
         </activity>
     </application>
 
