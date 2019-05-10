@@ -2,12 +2,13 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#313639"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <Button
         android:id="@+id/addButton7"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
@@ -18,7 +19,7 @@
 
     <Button
         android:id="@+id/addButton6"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
@@ -29,7 +30,7 @@
 
     <Button
         android:id="@+id/addButton5"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
@@ -40,7 +41,7 @@
 
     <Button
         android:id="@+id/addButton4"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
@@ -51,7 +52,7 @@
 
     <Button
         android:id="@+id/addButton3"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
@@ -62,7 +63,7 @@
 
     <Button
         android:id="@+id/deleteButton1"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="92dp"
@@ -76,7 +77,7 @@
 
     <Button
         android:id="@+id/deleteButton2"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -84,12 +85,13 @@
         android:text="Delete"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toEndOf="@+id/addButton2"
         app:layout_constraintTop_toBottomOf="@+id/deleteButton1" />
 
     <Button
         android:id="@+id/deleteButton3"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -103,7 +105,7 @@
 
     <Button
         android:id="@+id/deleteButton4"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -111,13 +113,13 @@
         android:text="Delete"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/addButton4"
         app:layout_constraintTop_toBottomOf="@+id/deleteButton3" />
 
     <Button
         android:id="@+id/deleteButton5"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -125,13 +127,13 @@
         android:text="Delete"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/addButton5"
         app:layout_constraintTop_toBottomOf="@+id/deleteButton4" />
 
     <Button
         android:id="@+id/deleteButton6"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -139,13 +141,13 @@
         android:text="Delete"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/addButton6"
         app:layout_constraintTop_toBottomOf="@+id/deleteButton5" />
 
     <Button
         android:id="@+id/deleteButton7"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -153,13 +155,13 @@
         android:text="Delete"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/addButton7"
         app:layout_constraintTop_toBottomOf="@+id/deleteButton6" />
 
     <Button
         android:id="@+id/addButton2"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
@@ -175,6 +177,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:text="Our Menu"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -186,6 +189,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="Name"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -196,6 +200,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="Price"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -206,6 +211,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Americano"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -216,6 +222,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:text="$1.95"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -226,6 +233,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Mocha"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
@@ -236,6 +244,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$3.15"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -246,6 +255,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Macchiato"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -256,6 +266,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$4.25"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -266,6 +277,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Frappucino"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -276,6 +288,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$5.15"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -286,6 +299,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Sandwich"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
@@ -296,6 +310,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$4.75"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/textView23"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
@@ -306,6 +321,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Croissant"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
@@ -316,6 +332,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$2.55"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
@@ -326,6 +343,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Cookie"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
@@ -336,12 +354,13 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$3.15"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/textView27"
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <Button
         android:id="@+id/addButton1"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="92dp"
@@ -357,6 +376,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="424dp"
         android:text="Your Items"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -369,6 +389,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="$"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -384,6 +405,7 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="8dp"
         android:text="Your Total Price ($)"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toEndOf="@+id/textView29"
@@ -395,8 +417,11 @@
         android:layout_height="31dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="28dp"
+        android:background="#036635"
         android:text="Done"
+        android:textColor="@android:color/white"
         android:textSize="10sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/buttonNewOrder"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -408,11 +433,15 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="NewOrder"
+        android:background="#036635"
+        android:text="New Order"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
         android:textSize="10sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.923" />
@@ -424,6 +453,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29"
@@ -438,12 +468,25 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="ADD CARD"
+        android:background="#036635"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.019"
         app:layout_constraintStart_toEndOf="@+id/totalOrderItemsTextView"
         app:layout_constraintTop_toBottomOf="@+id/totalPriceTextView"
         app:layout_constraintVertical_bias="0.388" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="72dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 
 </android.support.constraint.ConstraintLayout>
