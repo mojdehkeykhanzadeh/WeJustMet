@@ -104,44 +104,58 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()){
             case R.id.addButton1:
                 addOrder("Americano", 1.95);
-                //getTotalOrder();
-                //getTotalPrice();
                 break;
 
             case R.id.addButton2:
                 addOrder("Mocha", 3.15);
-                //getTotalOrder();
-                //getTotalPrice();
                 break;
 
             case R.id.addButton3:
                 addOrder("Macchiato", 4.25);
-                //getTotalOrder();
-                //getTotalPrice();
                 break;
 
             case R.id.addButton4:
                 addOrder("Frappucino", 5.15);
-                //getTotalOrder();
-                //getTotalPrice();
                 break;
 
             case R.id.addButton5:
                 addOrder("Sandwich", 4.75);
-                //getTotalOrder();
-                //getTotalPrice();
                 break;
 
             case R.id.addButton6:
                 addOrder("Croissant", 2.55);
-                //getTotalOrder();
-                //getTotalPrice();
                 break;
 
             case R.id.addButton7:
                 addOrder("Cookie", 3.15);
-                //getTotalOrder();
-                //getTotalPrice();
+                break;
+
+            case R.id.deleteButton1:
+                deleteOrder("Americano", 1.95);
+                break;
+
+            case R.id.deleteButton2:
+                deleteOrder("Mocha", 3.15);
+                break;
+
+            case R.id.deleteButton3:
+                deleteOrder("Macchiato", 4.25);
+                break;
+
+            case R.id.deleteButton4:
+                deleteOrder("Frappucino", 5.15);
+                break;
+
+            case R.id.deleteButton5:
+                deleteOrder("Sandwich", 4.75);
+                break;
+
+            case R.id.deleteButton6:
+                deleteOrder("Croissant", 2.55);
+                break;
+
+            case R.id.deleteButton7:
+                deleteOrder("Cookie", 3.15);
                 break;
 
             case R.id.buttonDone:
@@ -174,6 +188,32 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onResponse(String response) {
                         Log.e("Order Response", response);
+                        Toast toast= Toast.makeText(getApplicationContext(),
+                                response, Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                        toast.show();
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Rest Response", error.toString());
+                    }
+                }) {
+
+        };
+        requestQueue.add(objectRequest);
+    }
+
+    public void deleteOrder(String name, double price){
+        String URL = "http://10.0.2.2:8080/deleteOrderByName?name="+name+"&price="+price;
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        StringRequest objectRequest = new StringRequest(Request.Method.DELETE, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("Delete Order Response", response);
                         Toast toast= Toast.makeText(getApplicationContext(),
                                 response, Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
