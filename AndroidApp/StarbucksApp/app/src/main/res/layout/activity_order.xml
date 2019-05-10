@@ -9,7 +9,7 @@
         android:id="@+id/addButton7"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:text="Add"
         android:textSize="10sp"
@@ -20,7 +20,7 @@
         android:id="@+id/addButton6"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:text="Add"
         android:textSize="10sp"
@@ -31,7 +31,7 @@
         android:id="@+id/addButton5"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:text="Add"
         android:textSize="10sp"
@@ -42,7 +42,7 @@
         android:id="@+id/addButton4"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:text="Add"
         android:textSize="10sp"
@@ -53,7 +53,7 @@
         android:id="@+id/addButton3"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:text="Add"
         android:textSize="10sp"
@@ -65,11 +65,12 @@
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="8dp"
         android:text="Delete"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/addButton1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -160,7 +161,7 @@
         android:id="@+id/addButton2"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:text="Add"
         android:textSize="10sp"
@@ -171,7 +172,7 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:text="Our Menu"
         android:textSize="18sp"
@@ -180,9 +181,9 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
@@ -192,16 +193,16 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:text="Price"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Americano"
@@ -210,9 +211,9 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_width="36dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:text="$1.95"
         app:layout_constraintStart_toEndOf="@+id/textView15"
@@ -220,8 +221,8 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Mocha"
@@ -230,9 +231,9 @@
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_width="36dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$3.15"
         app:layout_constraintStart_toEndOf="@+id/textView17"
@@ -240,8 +241,8 @@
 
     <TextView
         android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Macchiato"
@@ -252,7 +253,7 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$4.25"
         app:layout_constraintStart_toEndOf="@+id/textView19"
@@ -260,8 +261,8 @@
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Frappucino"
@@ -270,9 +271,9 @@
 
     <TextView
         android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_width="36dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$5.15"
         app:layout_constraintStart_toEndOf="@+id/textView21"
@@ -280,8 +281,8 @@
 
     <TextView
         android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Sandwich"
@@ -290,9 +291,9 @@
 
     <TextView
         android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_width="36dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="$4.75"
         app:layout_constraintStart_toEndOf="@+id/textView23"
@@ -300,8 +301,8 @@
 
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Croissant"
@@ -310,72 +311,44 @@
 
     <TextView
         android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="36dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:text="$2.55"
         app:layout_constraintStart_toEndOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <TextView
         android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:text="Cookie"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
     <TextView
         android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="36dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:text="$3.15"
-        app:layout_constraintBottom_toTopOf="@+id/scrollViewTotalItems"
         app:layout_constraintStart_toEndOf="@+id/textView27"
-        app:layout_constraintTop_toBottomOf="@+id/textView26"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <Button
         android:id="@+id/addButton1"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="92dp"
         android:text="Add"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
-        android:id="@+id/scrollViewTotalItems"
-        android:layout_width="155dp"
-        android:layout_height="262dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29"
-        app:layout_constraintVertical_bias="0.0">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-            <TextView
-                android:id="@+id/totalOrderItemsTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text=" "/>
-        </LinearLayout>
-    </ScrollView>
 
     <TextView
         android:id="@+id/textView29"
@@ -389,8 +362,8 @@
 
     <TextView
         android:id="@+id/totalPriceTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_width="61dp"
+        android:layout_height="18dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -398,38 +371,34 @@
         android:text="$"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toEndOf="@+id/scrollViewTotalItems"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/totalOrderItemsTextView"
         app:layout_constraintTop_toBottomOf="@+id/textView31"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.004" />
 
     <TextView
         android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="8dp"
         android:text="Your Total Price ($)"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toEndOf="@+id/textView29"
         app:layout_constraintTop_toBottomOf="@+id/addButton7" />
 
     <Button
         android:id="@+id/buttonDone"
-        android:layout_width="67dp"
+        android:layout_width="85dp"
         android:layout_height="31dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
         android:text="Done"
         android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView31"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addButton7" />
+        app:layout_constraintStart_toEndOf="@+id/buttonNewOrder"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonNewOrder"
@@ -443,9 +412,22 @@
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923" />
+
+    <TextView
+        android:id="@+id/totalOrderItemsTextView"
+        android:layout_width="142dp"
+        android:layout_height="151dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </android.support.constraint.ConstraintLayout>

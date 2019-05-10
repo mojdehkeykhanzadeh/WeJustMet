@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Button btn1 = (Button) findViewById(R.id.buttonDummy);
         Button btn2 = (Button) findViewById(R.id.buttonRegister);
+        Button btn3 = (Button) findViewById(R.id.buttonOrder);
         btn1.setOnClickListener(this);
         /*btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });*/
         btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
     }
 
     @Override
@@ -35,6 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonRegister:
                 Intent intent2 = new Intent(v.getContext(), RegisterUser.class);
                 startActivity(intent2);
+                break;
+            case R.id.buttonOrder:
+                Intent intent3 = new Intent(v.getContext(), OrderActivity.class);
+                startActivity(intent3);
                 break;
             default:
                 break;

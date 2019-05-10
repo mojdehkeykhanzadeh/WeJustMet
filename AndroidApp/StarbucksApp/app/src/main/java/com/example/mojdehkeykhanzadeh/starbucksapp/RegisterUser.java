@@ -20,13 +20,15 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-public class RegisterUser extends AppCompatActivity {
+public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
     private EditText email;
     private EditText password;
     private EditText firstName;
     private EditText lastName;
     private EditText userId;
+
     private Button buttonRegister;
+    private Button buttonOrder;
 
     String emailText;
     String passwordText;
@@ -38,17 +40,30 @@ public class RegisterUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
+        buttonOrder = findViewById(R.id.buttonOrder);
         buttonRegister = findViewById(R.id.buttonRegister);
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Add User Response", Toast.LENGTH_SHORT).show();
-                addUser();
-            }
-        });
 
+        buttonRegister.setOnClickListener(this);
+        buttonOrder.setOnClickListener(this);
 
     }
+
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.buttonRegister:
+                addUser();
+                break;
+            case R.id.buttonOrder:
+                Intent intent = new Intent(v.getContext(), OrderActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+
+    }
+
 
     public void addUser(){
         email = findViewById(R.id.editTextEmail);
@@ -68,7 +83,7 @@ public class RegisterUser extends AppCompatActivity {
         editor.putString("userId",userIdText);
         editor.commit();
 
-        String URL = "http://192.168.0.11:8080/createUser?email="+emailText+"&password="+passwordText+"&firstName="+firstNameText+"&lastName="+lastNameText+"&userId="+userIdText;
+        String URL = "http://10.0.2.2:8080/createUser?email="+emailText+"&password="+passwordText+"&firstName="+firstNameText+"&lastName="+lastNameText+"&userId="+userIdText;
         //http://localhost:8080/createUser?email=ss@ji.com&password=1234&firstName=Ko&lastName=Polk&userId=12345
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
