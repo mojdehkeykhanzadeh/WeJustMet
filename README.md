@@ -29,11 +29,11 @@
 
 ## Register User Screen
 
-![image](https://user-images.githubusercontent.com/33049718/57509035-0a11d300-72b8-11e9-8dea-e8d7b7ddae65.png)
+![image](https://user-images.githubusercontent.com/33049718/57538375-24ba6b00-72fd-11e9-870e-d9959feeb4da.png)
 
 ## Manage Order Screen 
 
-![image](https://user-images.githubusercontent.com/33049718/57538088-7d3d3880-72fc-11e9-8d8b-ff7791ba3285.png)
+![image](https://user-images.githubusercontent.com/33049718/57538465-516e8280-72fd-11e9-9e09-8d32cd982222.png)
 
 ## Add Card Screen
 
