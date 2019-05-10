@@ -60,5 +60,5 @@
 - Clean Project 
 -  Make Project
 #### 2) Create New Virtual Device ( version Oreo 8) and run the app
-Note for running on ECS instance the endpoint URL needs to be updated as not checked in
+
 
