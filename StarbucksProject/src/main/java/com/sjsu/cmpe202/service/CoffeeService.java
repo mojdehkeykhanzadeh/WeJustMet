@@ -67,7 +67,7 @@ public class CoffeeService {
 		//Coffee p = coffeeRepository.findByName(name);
 		//orderPrice -= p.getPrice();
 		//coffeeRepository.delete(p);
-		
+		df.format(price);
 		orderPrice -= price;
 		orderFinal.remove(name);
 		df.format(orderPrice);
