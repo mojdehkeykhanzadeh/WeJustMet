@@ -2,13 +2,13 @@
 #Team Members
 ## Rajalakshmi Babu - 011486345
 ## Mojdeh 
-## Nathan
+## Nathan (Sangwon)
 ## Tommy
 
 #Tasks
 ## Rajalakshmi Babu - Add Card API
 ## Mojdeh - Payment API
-## Nathan - User Profile API
+## Nathan (Sangwon) - User Profile API
 ## Tommy - Order API
 
 ### Architecture Diagram (Component Diagram)
