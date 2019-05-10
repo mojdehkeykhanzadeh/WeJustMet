@@ -44,15 +44,15 @@
 ![image](https://user-images.githubusercontent.com/33049718/57509035-0a11d300-72b8-11e9-8dea-e8d7b7ddae65.png)
 
 # Steps to setup the backend project 
-## Clone the project using the command- git clone {repository}
-## Create jar file by running the command- mvn package
-## Setup mongoDB credentials in application.properties file under resources
-## Build the docker file using the command- docker image build -t starbucks:latest . 
-## Log into AWS region using the command- aws ecr get-login --no-include-email --region us-east-1
-## Create repository in AWS ECR
-## Follow the command issued by AWS o push the docker image into AWS ECR
-## Create cluster in AWS ECS
-## Create Task definition by using the image
-## Run the task in the cluster using the task definition
+#### Clone the project using the command- git clone {repository}
+#### Create jar file by running the command- mvn package
+#### Setup mongoDB credentials in application.properties file under resources
+#### Build the docker file using the command- docker image build -t starbucks:latest . 
+#### Log into AWS region using the command- aws ecr get-login --no-include-email --region us-east-1
+#### Create repository in AWS ECR
+#### Follow the command issued by AWS o push the docker image into AWS ECR
+#### Create cluster in AWS ECS
+#### Create Task definition by using the image
+#### Run the task in the cluster using the task definition
 
 
