@@ -1,6 +1,7 @@
 package com.example.mojdehkeykhanzadeh.starbucksapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +40,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     private Button buttonNewOrder;
     private Button buttonDone;
+    private Button buttonAddCard;
 
     private TextView totalPriceTextView;
     private TextView totalOrderItemsTextView;
@@ -74,6 +76,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
         buttonDone = (Button) findViewById(R.id.buttonDone);
         buttonNewOrder = (Button) findViewById(R.id.buttonNewOrder);
+        buttonAddCard = (Button) findViewById(R.id.buttonAddCard);
 
         addButton1.setOnClickListener(this);
         addButton2.setOnClickListener(this);
@@ -93,6 +96,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
         buttonDone.setOnClickListener(this);
         buttonNewOrder.setOnClickListener(this);
+        buttonAddCard.setOnClickListener(this);
     }
 
     @Override
@@ -147,6 +151,11 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.buttonNewOrder:
                 clearOrder();
+                break;
+
+            case R.id.buttonAddCard:
+                Intent intent = new Intent(v.getContext(), AddCardActivity.class);
+                startActivity(intent);
                 break;
 
             default:
