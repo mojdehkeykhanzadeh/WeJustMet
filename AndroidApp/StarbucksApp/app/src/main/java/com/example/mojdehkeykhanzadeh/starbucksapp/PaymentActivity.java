@@ -55,13 +55,8 @@ public class PaymentActivity extends AppCompatActivity {
 //                getBalance();
             }
         });
-<<<<<<< HEAD
         orderBtn= findViewById(R.id.buttonOrder);
         orderBtn.setOnClickListener(new View.OnClickListener() {
-=======
-         orderBtn= findViewById(R.id.buttonOrder);
-         orderBtn.setOnClickListener(new View.OnClickListener() {
->>>>>>> 3bb5e475b542b3544aabae5da78e3cd11ddb8b13
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), OrderActivity.class);
