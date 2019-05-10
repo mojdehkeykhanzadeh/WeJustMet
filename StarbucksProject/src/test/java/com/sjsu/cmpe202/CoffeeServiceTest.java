@@ -58,11 +58,12 @@ class CoffeeServiceTest {
 		
 		testItems.add("Americano");
 		testItems.add("Iced Green Tea");
-		testItems.add("Java Latte");
+		//testItems.add("Java Latte");
 		
 		coffeeService.create("Americano", 3.50);
 		coffeeService.create("Iced Green Tea", 2.50);
 		coffeeService.create("Java Latte", 2.75);
+		coffeeService.delete("Java Latte", 2.75);
 		
 		orderItems = coffeeService.getOrderItems();
 		
@@ -70,7 +71,7 @@ class CoffeeServiceTest {
 		
 		double testPrice = coffeeService.getOrderPrice();
 		
-		assertEquals(8.75, testPrice);
+		assertEquals(6.00, testPrice);
 		
 		coffeeService.deleteAll();
 								
