@@ -41,17 +41,22 @@ I kept the value of Simplicity throughout the project. I disintegrated complex i
 ---
 ### What tasks did I work on / complete?
 
-
+I completed my part of Android application screens (Register User, Make an Order). 
+I worked on the screen flow of our Android application and appearance.
+I debugged our APIs if there are some issues or bugs. One I fixed was that when we added price, there were some junk values. I fixed it by changing formats.
+I also tested the APIs deployed on AWS ECS with Android Application UI.
 
 ### What am I planning to work on next?
 
-
+I will be working on mostly documentation regarding our project before the class of this week.
 
 ### What tasks are blocked waiting on another team member?
 
+N/A
 
 ### XP Core Values that kept throughout the project:
 
+Communication - Since it is a teamwork and I am integrating components with other team members, communicating among the team regarding issues and setups were significantly important. We had remote meetings frequently when we faced any issues. For example, I met Mojdeh more frequently than other team members because she and I worked on the Android application. We could solve any issues and keep syncing the structures on eachone's part. I could also find some issues about adding junk values in Order API named "Coffee" in the source code and fixed by communicating with Tommy. 
 
 
 
