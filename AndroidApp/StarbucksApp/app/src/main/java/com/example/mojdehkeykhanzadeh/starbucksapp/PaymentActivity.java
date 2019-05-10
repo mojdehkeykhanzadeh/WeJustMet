@@ -28,6 +28,9 @@ public class PaymentActivity extends AppCompatActivity {
     private String cardId;
     private String userId;
     private String total;
+    private Button orderBtn;
+    private Button refreshBal;
+    private String nBalance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +51,28 @@ public class PaymentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getBaseContext(), "Add Card Response", Toast.LENGTH_SHORT).show();
                 makePayment();
+                updateBalance();
+//                getBalance();
+            }
+        });
+        orderBtn= findViewById(R.id.buttonOrder);
+        orderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), OrderActivity.class);
+                startActivity(intent);
+            }
+        });
+        refreshBal= findViewById(R.id.buttonRefresh);
+        refreshBal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getBalance();
             }
         });
     }
     public void getBalance() {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        //totalShare
         String URL = "http://10.0.2.2:8080/getBalance?userId="+userId+"&cardNumber="+cardId;
         StringRequest objectRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
@@ -105,4 +124,34 @@ public class PaymentActivity extends AppCompatActivity {
         };
         requestQueue.add(objectRequest);
     }
+    public void updateBalance(){
+        String URL ="http://10.0.2.2:8080/deductMoney?userId="+userId+"&cardNumber=" +cardId+
+                "&amt="+total;
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        StringRequest objectRequest = new StringRequest(Request.Method.POST , URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("Response", response);
+                        Toast toast= Toast.makeText(getApplicationContext(),
+                                response, Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                        toast.show();
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Rest Response", error.toString());
+                    }
+                }) {
+
+        };
+        requestQueue.add(objectRequest);
+    }
+    //
+
+
 }
