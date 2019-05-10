@@ -193,20 +193,28 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void getTotalPrice(){
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
         String URL = "http://10.0.2.2:8080/getTotalOrderPrice";
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest objectRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Log.e("Get Response", response);
                         total = new String(response);
+                        Log.e("Getting Total", total);
                         totalPriceTextView = (TextView) findViewById(R.id.totalPriceTextView);
                         totalPriceTextView.setText(total);
 
+
                         SharedPreferences sp = getSharedPreferences("My Pref", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("totalShare",total);
+                        editor.commit();
+                        Log.e("totalShare", total);
+
+                        /*SharedPreferences sp = getSharedPreferences("My Pref", Context.MODE_PRIVATE);
                         totalShare = sp.getString("totalShare",total);
-                        Log.e("Total Price ==== !", totalShare);
+                        Log.e("Total Price ==== !", totalShare);*/
 
                     }
                 },
