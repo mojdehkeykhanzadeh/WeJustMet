@@ -1,5 +1,11 @@
 # WeJustMet
-#Team Members
+## Team Members
+
+| Name | ID |
+| --- | --- |
+| Rajalakshmi Babu | 011486345 |
+| Mojdeh Keykhanzadeh | 008129589 |
+
 ## Rajalakshmi Babu - 011486345
 ## Mojdeh Keykhanzadeh - 008129589
 ## Nathan (Sangwon)
