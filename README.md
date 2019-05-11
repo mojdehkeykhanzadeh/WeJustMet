@@ -16,6 +16,18 @@
 ### Nathan (Sangwon) - User Profile API
 ### Tommy - Order API
 
+# Feature Set
+### APIs for AddCard
+### APIs for Payment
+### APIs for User
+### APIs for Order
+### Android Mobile Application
+### AWS ECS Deployment
+
+# Design Decision
+Our decision decision to implement each API was to use the Observer pattern. Even though our architecture was MVC pattern, our application has similarity with the Observer pattern. Since in the Observer pattern, the observer notifies updates to the subject, we designed our APIs receiving all the updated information to the related fields. For example, when an user makes payement, the user uses the same card information and card key from the AddCard API. </br>
+For the Android application, we used the Singleton pattern. If an user started the application, it would store the specific information for the user such as user ID, and card number. Once the application is completed, a new user needs to be registered with a new user ID.
+
 # Architecture Diagram (MVC Pattern)
 ![image](https://user-images.githubusercontent.com/30476448/57498846-5cd89400-7292-11e9-9aac-5a00b9244779.png)
 
