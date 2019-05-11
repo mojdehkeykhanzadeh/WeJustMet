@@ -75,5 +75,5 @@ Finishing all documewnation for the project
 N/A
 
 ### XP Core Values that kept throughout the project:
-Having group scrum meetings to focus on what each memeber needs to complete as well what needed to be worked on next. We were able to figure out all remaining tasks and documenation needs. Communictions really helped keeping things moving along.
+Communication - Having group scrum meetings to focus on what each memeber needs to complete as well what needed to be worked on next. We were able to figure out all remaining tasks and documenation needs. Communictions really helped keeping things moving along.
 
