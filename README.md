@@ -11,10 +11,10 @@
 
 
 # Tasks
-### Rajalakshmi Babu - Add Card API
+### Rajalakshmi Babu - Add Card API, AWS ECS Deployment
 ### Mojdeh - Payment API , Android App (Add Card and Payment Screen)
-### Nathan (Sangwon) - User Profile API
-### Tommy - Order API
+### Nathan (Sangwon) - User API, Android App (Register User and Make an Order Screen)
+### Tommy - Order API, Unit Test
 
 # Feature Set
 ### APIs for AddCard
